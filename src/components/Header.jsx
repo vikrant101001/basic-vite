@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 
-export const Header = ({ renderCount }) => {
+export const Header = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -10,7 +10,7 @@ export const Header = ({ renderCount }) => {
         <div>
           <h1 className="text-3xl font-bold mb-2">React Vite Demo App</h1>
           <p className="text-gray-600">Sample API</p>
-          <p className="text-sm text-gray-500">Render count: {renderCount}</p>
+          
         </div>
         <button
           onClick={toggleTheme}

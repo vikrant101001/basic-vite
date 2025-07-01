@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const NameInput = () => {
-  const [name, setName] = useLocalStorage('name', '');
+  const [name, setName] = useState('');
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
@@ -18,7 +17,7 @@ export const NameInput = () => {
     setResponse(null);
 
     try {
-      // Real API call using fetch to JSONPlaceholder (dummy API)
+      
       const apiResponse = await fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         headers: {
@@ -38,7 +37,7 @@ export const NameInput = () => {
 
       const data = await apiResponse.json();
       
-      // Format the response for display
+     
       const formattedResponse = {
         id: data.id,
         message: `Hello ${name}! Your post was created successfully.`,
@@ -60,14 +59,14 @@ export const NameInput = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-semibold mb-4">Custom Hook Demo with Real API</h2>
+      <h2 className="text-2xl font-semibold mb-4">API Integration Demo</h2>
       
       <div className="flex gap-2 mb-4">
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name (persisted with custom hook)"
+          placeholder="Enter your name"
           className="flex-1 p-3 border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
           disabled={loading}
         />
