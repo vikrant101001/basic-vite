@@ -6,7 +6,7 @@ npm
 
 ## Steps
 
-Install dependencies
+
 npm install
 
 
